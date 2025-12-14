@@ -1,0 +1,92 @@
+<?php
+session_start();
+
+require_once 'config.php';
+
+// Get current user if logged in
+$user = getCurrentUser();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="43200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/destination.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="mailto:445001472@sm.edu.imamu.sa">Email: 445001472@sm.edu.imamu.sa</a> |
+            <a href="tel:+966552616596">Phone: +966 552616596</a> |
+            <a href="https://www.linkedin.com/in/reema-alzoman-6b30732a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/reema-z/web-devolpment-project.git" target="_blank">GitHub</a>
+        </div>
+    </header>
+    
+    <?php include 'navbar.php'; ?>
+    
+    <section id="tourism">
+        <h2>where to Go in Saudi?</h2>
+        
+        <div class="tourism-grid">
+            <div class="place">
+                <img src="img/alula.png" alt="AlUla">
+                <h3><a href="https://en.wikipedia.org/wiki/Al-'Ula" target="_blank">AlUla</a></h3>
+                <p>Known for its stunning rock formations and ancient Nabatean tombs, AlUla is a must-visit heritage site.</p>
+            </div>
+            
+            <div class="place">
+                <img src="img/riyadh.png" alt="Riyadh">
+                <h3><a href="https://en.wikipedia.org/wiki/Riyadh" target="_blank">Riyadh</a></h3>
+                <p>The capital city blends tradition with modern vision, showcasing Saudi Arabia's rapid development.</p>
+            </div>
+            
+            <div class="place">
+                <img src="img/jeddah.png" alt="Jeddah">
+                <h3><a href="https://en.wikipedia.org/wiki/Jeddah" target="_blank">Jeddah</a></h3>
+                <p>A coastal gem on the Red Sea, known for its vibrant art scene, historic Al-Balad, and beautiful corniche.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tourism">
+        <h2>Hotels</h2>
+        
+        <div class="tourism-grid">
+            <div class="place">
+                <img src="img/NhotelRiyadh.webp" alt="Narcissus The Royal Hotel">
+                <h3><a href="https://www.booking.com/hotel/sa/nrsys-dh-rwyl-lryd.html?aid=308014&label=msn-%2Ali8BfISZ8GkoBoVZaMvJA-79852213266033%3Atikwd-79852373094551%3Aloc-216%3Aneo%3Amte%3Alp154640%3Adec%3Aqshotels%20in%20riyadh&sid=d9b669f28dab8c53181cebcbc357f4c8&dest_id=900040280&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1760790585&srpvid=916b57cd51a1023f&type=total&ucfs=1&" target="_blank">Narcissus The Royal Hotel</a></h3>
+                <p><strong>Hotel in Al Olaya, Riyadh</strong></p>
+                <p>Set in Riyadh, less than 1 km from Al Faisaliah Tower, Narcissus The Royal Hotel offers accommodation with a fitness centre, free private parking, a shared lounge and a restaurant.</p>
+            </div>
+            
+            <div class="place">
+                <img src="img/IhotelJeddah.webp" alt="ibis Jeddah City Center">
+                <h3><a href="https://www.booking.com/hotel/sa/ibis-jeddah-city-center.en-gb.html?aid=308014&label=msn-%2Ali8BfISZ8GkoBoVZaMvJA-79852213266033%3Atikwd-79852373094551%3Aloc-216%3Aneo%3Amte%3Alp154640%3Adec%3Aqshotels%20in%20riyadh&sid=d9b669f28dab8c53181cebcbc357f4c8&dest_id=6044848&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1760790356&srpvid=58bf5767f90102d8&type=total&ucfs=1&" target="_blank">ibis Jeddah City Center</a></h3>
+                <p><strong>Al Andalus, Jeddah</strong></p>
+                <p>Located in Jeddah, 3.6 km from Jeddah Mall, ibis Jeddah City Center provides accommodation with an outdoor swimming pool, free private parking, a fitness centre and a shared lounge.</p>
+            </div>
+            
+            <div class="place">
+                <img src="img/ChotelAlula.webp" alt="Cloud 7 Residence AlUla">
+                <h3><a href="https://www.booking.com/hotel/sa/cloud7-residences-alula-alula-city.html?aid=2439339&label=msn-mGE5B7XZc_xJGvlCYlaXrA-80127112043392%3Atikwd-80127301544729%3Aloc-216%3Aneo%3Amte%3Alp154640%3Adec%3AqsCloud+7+Residence+AlUla&sid=d9b669f28dab8c53181cebcbc357f4c8&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1760790134&srpvid=96f356f750471024&type=total&ucfs=1&lang=en-us&soz=1&lang_changed=1" target="_blank">Cloud 7 Residence AlUla</a></h3>
+                <p><strong>Al-ʿUla</strong></p>
+                <p>Featuring a swimming pool, a fitness centre, a bar and views of the mountain, Cloud 7 Residence AlUla is located in AlUla and provides accommodation with free WiFi.</p>
+            </div>
+        </div>
+    </section>
+    
+    <?php if (isLoggedIn()): ?>
+        <a href="BookHotel.php"><h1>Wanna Book To See Yourself?</h1></a>
+    <?php else: ?>
+        <a href="signIn.php"><h1>Please Sign In to Book a Hotel</h1></a>
+    <?php endif; ?>
+    
+    <footer>
+        &copy;2025-26 / IMSIU / CCIS<sup>TM</sup>
+    </footer>
+</body>
+</html>

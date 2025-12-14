@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book Hotel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/bookHotel.css">
+</head>
+
+<body>
+
+    <main class="BookHotel-container">
+        <form action="homepage.html" method="get">
+
+            <h2>Book Your Hotel</h2>
+
+            <label for="City">City:</label>
+            <select id="City" name="City" required>
+                <option value="Riyadh">Riyadh</option>
+                <option value="Jeddah">Jeddah</option>
+                <option value="AlUla">AlUla</option>
+            </select>
+
+            <label for="hotel">Hotel Name:</label>
+            <select id="hotel" name="hotel" required>
+                <option value="Hilton">Narcissus The Royal Hotel</option>
+                <option value="Marriott">ibis Jeddah City Center</option>
+                <option value="Local Inn">Cloud 7 Residence AlUla</option>
+            </select>
+
+            <label for="checkin">Check-In Date:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Check-Out Date:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="rooms">Number of Rooms:</label>
+            <input type="number" id="rooms" name="rooms" min="1" max="5" required>
+
+            <label>Room Type:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="roomType" value="Single" required> Single</label>
+                <label><input type="radio" name="roomType" value="Double"> Double</label>
+                <label><input type="radio" name="roomType" value="Suite"> Suite</label>
+            </div>
+
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="result"></div>
+    </main>
+    <script>
+
+        function checkDate(event) {
+            var ChkIn_Date = new Date(document.getElementById("checkin").value);
+            var ChkOut_Date = new Date(document.getElementById("checkout").value);
+            var today = new Date();
+
+            var result = document.getElementById("result");
+            result.innerHTML = "";
+
+            if (ChkOut_Date <= ChkIn_Date) {
+                event.preventDefault();
+                result.innerHTML = "<p>Check-out date must be greater than check in date!</p>";
+            }
+            else if (ChkIn_Date <= today) {
+                event.preventDefault();
+                result.innerHTML = "<p>Check-in date must be greater than today!</p>";
+            }
+        }
+        document.querySelector("form").addEventListener("submit", checkDate);
+    </script>
+
+</body>
+
+</html>
